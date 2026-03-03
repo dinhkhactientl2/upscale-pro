@@ -82,6 +82,97 @@ App sẽ **tự kiểm tra bản mới** mỗi khi khởi động. Khi có bản
 - ⬇️ Tự tải bản mới ở background
 - 🚀 Restart để apply update
 
+## 🛠️ Hướng dẫn cài đặt chi tiết
+
+### Cách 1: Cài đặt bằng EXE (Khuyên dùng)
+
+1. Tải file `upscayl-xx.x.x-win.exe` từ [Releases](https://github.com/dinhkhactientl2/upscayl-pro/releases/latest)
+2. Nhấp đôi vào file `.exe` để mở trình cài đặt
+3. Chọn thư mục cài đặt (mặc định: `C:\Program Files\Upscayl`)
+4. Bấm **Install** → Chờ cài đặt hoàn tất
+5. Bấm **Finish** → App sẽ tự mở
+
+> 💡 Cài bằng EXE sẽ được **tự động cập nhật** khi có phiên bản mới!
+
+### Cách 2: Portable (Không cần cài đặt)
+
+1. Tải file `upscayl-xx.x.x-win.zip` từ [Releases](https://github.com/dinhkhactientl2/upscayl-pro/releases/latest)
+2. Giải nén vào thư mục bất kỳ (ví dụ: `D:\Apps\Upscayl`)
+3. Mở thư mục đã giải nén → Nhấp đôi vào `Upscayl.exe`
+4. (Tùy chọn) Click phải `Upscayl.exe` → **Pin to taskbar** để tiện truy cập
+
+> ⚠️ Không giải nén vào `C:\Program Files` — có thể bị lỗi quyền truy cập!
+
+## 🧩 Thêm Custom Model (AI Model tùy chỉnh)
+
+Ngoài 7 model có sẵn, bạn có thể tải thêm hàng trăm model AI miễn phí từ cộng đồng:
+
+### Bước 1: Tải model từ OpenModelDB
+
+1. Truy cập 👉 [**openmodeldb.info**](https://openmodeldb.info/)
+2. Dùng bộ lọc:
+   - **Scale**: chọn `4x` (khuyên dùng)
+   - **Purpose**: chọn loại ảnh (Photo, Anime, Art...)
+   - **Architecture**: chọn `ESRGAN` hoặc `Real-ESRGAN` (tương thích tốt nhất)
+3. Chọn model → Bấm **Download** → Tải file `.pth`
+
+### Bước 2: Chuyển đổi model (nếu cần)
+
+> App hỗ trợ format `.param` + `.bin` (NCNN). Nếu model tải về là `.pth` (PyTorch), cần convert:
+> - Dùng tool [chaiNNer](https://github.com/chaiNNer-org/chaiNNer) để convert `.pth` → `.bin` + `.param`
+> - Hoặc tìm model đã convert sẵn (NCNN format) trên OpenModelDB
+
+### Bước 3: Thêm vào app
+
+1. Tạo thư mục chứa model custom (ví dụ: `D:\AI-Models\`)
+2. Copy file `.bin` + `.param` vào thư mục đó
+3. Mở **Upscale Photo Pro** → Tab **Cài đặt**
+4. Mục **"Thư mục Model Tùy chỉnh"** → Bấm chọn thư mục `D:\AI-Models\`
+5. Model mới sẽ xuất hiện trong danh sách model!
+
+### 🏆 Model cộng đồng hay dùng
+
+| Model | Tốt cho | Link |
+|---|---|---|
+| **4x-UltraSharp** | Ảnh thật, sắc nét | [OpenModelDB](https://openmodeldb.info/) |
+| **4x-AnimeSharp** | Anime, manga | [OpenModelDB](https://openmodeldb.info/) |
+| **4x-FaceUpDAT** | Khuôn mặt, chân dung | [OpenModelDB](https://openmodeldb.info/) |
+| **2x-Compact** | Upscale nhẹ, nhanh | [OpenModelDB](https://openmodeldb.info/) |
+
+## ❓ Câu hỏi thường gặp (FAQ)
+
+<details>
+<summary><b>🔸 Ảnh output bị mờ / không đẹp?</b></summary>
+
+- Thử đổi model khác (Ultrasharp hoặc Remacri thường cho kết quả tốt nhất)
+- Ảnh gốc quá nhỏ (< 200px) sẽ khó upscale đẹp
+- Dùng **Double Upscale** (2x → 2x) thay vì 1 lần 4x
+</details>
+
+<details>
+<summary><b>🔸 App bị đứng / crash?</b></summary>
+
+- Kiểm tra GPU driver đã cập nhật chưa
+- Máy có GPU Intel integrated → upscale ảnh lớn có thể bị chậm/đứng
+- Thử dùng model **Upscayl Lite 4x** (nhẹ hơn)
+</details>
+
+<details>
+<summary><b>🔸 Upscale chậm quá?</b></summary>
+
+- GPU NVIDIA/AMD sẽ nhanh hơn Intel **10x**
+- Cập nhật GPU driver mới nhất
+- Đóng các app nặng khác khi upscale
+</details>
+
+<details>
+<summary><b>🔸 Custom model không hiện trong danh sách?</b></summary>
+
+- Đảm bảo file `.bin` và `.param` cùng tên (ví dụ: `4x-ultrasharp.bin` + `4x-ultrasharp.param`)
+- Đảm bảo đã chọn đúng thư mục trong Cài đặt
+- Restart app sau khi thêm model mới
+</details>
+
 ---
 
 <p align="center">
