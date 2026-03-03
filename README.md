@@ -114,18 +114,38 @@ Ngoài 7 model có sẵn, bạn có thể tải thêm hàng trăm model AI miễ
    - **Scale**: chọn `4x` (khuyên dùng)
    - **Purpose**: chọn loại ảnh (Photo, Anime, Art...)
    - **Architecture**: chọn `ESRGAN` hoặc `Real-ESRGAN` (tương thích tốt nhất)
-3. Chọn model → Bấm **Download** → Tải file `.pth`
+3. Chọn model → Bấm **Download**
 
-### Bước 2: Chuyển đổi model (nếu cần)
+### Bước 2: Chuyển đổi model
 
-> App hỗ trợ format `.param` + `.bin` (NCNN). Nếu model tải về là `.pth` (PyTorch), cần convert:
-> - Dùng tool [chaiNNer](https://github.com/chaiNNer-org/chaiNNer) để convert `.pth` → `.bin` + `.param`
-> - Hoặc tìm model đã convert sẵn (NCNN format) trên OpenModelDB
+App hỗ trợ **2 format** model:
+
+| Format | Ưu tiên | Ghi chú |
+|---|---|---|
+| ✅ **ONNX** (`.onnx`) | ⭐ Khuyên dùng | Nhanh, tương thích tốt nhất |
+| ✅ **NCNN** (`.param` + `.bin`) | Phương án dự phòng | Dùng khi không convert được ONNX |
+
+#### 🔹 Cách 1: Convert sang ONNX (Khuyên dùng)
+
+App đã **tích hợp sẵn tool chuyển đổi** `.pth` → `.onnx`:
+
+1. Mở **Upscale Photo Pro** → Tab **Cài đặt**
+2. Tìm mục **"Chuyển đổi Model (.pth → .onnx)"**
+3. Chọn file `.pth` đã tải → App tự động convert
+4. File `.onnx` sẽ được lưu cùng thư mục
+
+> 💡 Hoặc dùng command line: `python tools/convert-pth-to-onnx.py model.pth`
+
+#### 🔹 Cách 2: Dùng NCNN format (Phương án dự phòng)
+
+Nếu không convert được ONNX:
+- Dùng tool [chaiNNer](https://github.com/chaiNNer-org/chaiNNer) để convert `.pth` → `.bin` + `.param`
+- Hoặc tìm model đã convert sẵn (NCNN format) trên OpenModelDB
 
 ### Bước 3: Thêm vào app
 
 1. Tạo thư mục chứa model custom (ví dụ: `D:\AI-Models\`)
-2. Copy file `.bin` + `.param` vào thư mục đó
+2. Copy file model (`.onnx` hoặc `.bin` + `.param`) vào thư mục đó
 3. Mở **Upscale Photo Pro** → Tab **Cài đặt**
 4. Mục **"Thư mục Model Tùy chỉnh"** → Bấm chọn thư mục `D:\AI-Models\`
 5. Model mới sẽ xuất hiện trong danh sách model!
