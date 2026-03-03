@@ -127,16 +127,19 @@ App hỗ trợ **2 format** model:
 
 #### 🔹 Cách 1: Convert sang ONNX (Khuyên dùng)
 
-Dùng tool chuyển đổi có sẵn trong thư mục cài đặt:
+1. Tải **convert-model-tools.zip** từ [📥 Releases](https://github.com/dinhkhactientl2/upscayl-pro/releases/latest)
+2. Giải nén ra thư mục bất kỳ
+3. Chạy lệnh convert:
 
 ```bash
-cd tools
-python convert-pth-to-onnx.py model.pth
+python convert-pth-to-onnx.py duong-dan\model.pth
 ```
 
-File `.onnx` sẽ được tạo cùng thư mục với file `.pth` gốc.
+4. File `.onnx` sẽ được tạo cùng thư mục với file `.pth` gốc
 
-> 💡 Yêu cầu: Python 3.8+ và PyTorch (`pip install torch`)
+> 💡 Yêu cầu: Python 3.8+ và PyTorch (`pip install torch onnx`)
+>
+> 📋 Bên trong zip gồm: `convert-pth-to-onnx.py` + `convert-pth-to-onnx.bat` + `onnx2ncnn.exe`
 
 #### 🔹 Cách 2: Dùng NCNN format (Phương án dự phòng)
 
