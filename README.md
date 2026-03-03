@@ -127,14 +127,16 @@ App hỗ trợ **2 format** model:
 
 #### 🔹 Cách 1: Convert sang ONNX (Khuyên dùng)
 
-App đã **tích hợp sẵn tool chuyển đổi** `.pth` → `.onnx`:
+Dùng tool chuyển đổi có sẵn trong thư mục cài đặt:
 
-1. Mở **Upscale Photo Pro** → Tab **Cài đặt**
-2. Tìm mục **"Chuyển đổi Model (.pth → .onnx)"**
-3. Chọn file `.pth` đã tải → App tự động convert
-4. File `.onnx` sẽ được lưu cùng thư mục
+```bash
+cd tools
+python convert-pth-to-onnx.py model.pth
+```
 
-> 💡 Hoặc dùng command line: `python tools/convert-pth-to-onnx.py model.pth`
+File `.onnx` sẽ được tạo cùng thư mục với file `.pth` gốc.
+
+> 💡 Yêu cầu: Python 3.8+ và PyTorch (`pip install torch`)
 
 #### 🔹 Cách 2: Dùng NCNN format (Phương án dự phòng)
 
