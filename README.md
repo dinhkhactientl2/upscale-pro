@@ -10,7 +10,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Windows">
-  <img src="https://img.shields.io/badge/Version-28.0.0-green?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Version-29.0.0-green?style=for-the-badge" alt="Version">
   <img src="https://img.shields.io/badge/AI-Powered-purple?style=for-the-badge&logo=tensorflow" alt="AI Powered">
   <img src="https://img.shields.io/badge/License-Private-red?style=for-the-badge" alt="License">
 </p>
@@ -104,14 +104,16 @@
 
 ---
 
-## 🆕 What's New — v28.0.0
+## 🆕 What's New — v29.0.0
 
-- ✅ **Chọn thư mục** — Chọn nguyên folder ảnh, tự thêm tất cả vào hàng đợi
-- ✅ **Chrome thu nhỏ** — Tự động thu Chrome còn 40% góc phải
-- ✅ **Không timeout** — Đợi vô hạn cho đến khi xóa nền xong
-- ✅ **Auto đóng popup** — Tự tắt QR code login, cookie consent
-- ✅ **Smart download** — Đợi file tải xong mới đóng tab
-- ✅ **Quota chính xác** — Hiển thị lượt còn lại ngay sau khi xong
+- ✅ **Grok AI Tab** — Thêm tab Grok AI upscale với 6 styles, chạy đồng thời 3 ảnh
+- ✅ **Đa luồng AI Studio** — Xử lý 3 ảnh cùng lúc, mỗi ảnh 1 tab Chrome
+- ✅ **Drag & Drop toàn diện** — Kéo thả ảnh hoạt động ổn định trên tất cả các tab
+- ✅ **Nút "Xóa xong"** — Xóa nhanh ảnh đã hoàn thành ở tất cả các tab
+- ✅ **Nút chuyển ảnh cố định** — Cụm "Chuyển tất cả" ghim ở dưới cùng sidebar
+- ✅ **Auto Update** — Chuông thông báo khi có bản mới, tự tải và cài đặt
+- ✅ **Fix ID collision** — Không còn trùng ID khi thêm ảnh hàng loạt
+- ✅ **Toast chính xác** — Hiển thị đúng số ảnh thêm mới vs ảnh trùng
 
 ---
 
